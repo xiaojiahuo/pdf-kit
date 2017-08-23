@@ -31,22 +31,28 @@ public class PDFHeaderFooter implements HeaderFooterBuilder {
         if (data == null) {
             return;
         }
-        int pageS = writer.getPageNumber();
-        int currentPage = pageS - 1;
-        if (currentPage <= 0) {
-            return;
-        }
-        Phrase footer1 = new Phrase("页脚一", font);
-        Phrase footer2 = new Phrase("页脚二" + "    " + currentPage + "/", font);
+
+//        //从第二页开始设置页脚
+//        int pageS = writer.getPageNumber();
+//        int currentPage = pageS - 1;
+//        if (currentPage <= 0) {
+//            return;
+//        }
+
+        //当前页
+        int currentPage = writer.getPageNumber();
+
+//        Phrase footer1 = new Phrase("页脚一", font);
+        Phrase footer2 = new Phrase(currentPage + "/", font);
 
         PdfContentByte cb = writer.getDirectContent();
-        ColumnText.showTextAligned(
-                cb,
-                Element.ALIGN_LEFT,
-                footer1,
-                (document.left() + 10),
-                document.bottom() - 20,
-                0);
+//        ColumnText.showTextAligned(
+//                cb,
+//                Element.ALIGN_LEFT,
+//                footer1,
+//                (document.left() + 10),
+//                document.bottom() - 20,
+//                0);
         ColumnText.showTextAligned(
                 cb,
                 Element.ALIGN_RIGHT,
@@ -91,7 +97,7 @@ public class PDFHeaderFooter implements HeaderFooterBuilder {
      * @description 页头、页眉设置的模板替换类
      */
     public String getReplaceOfTemplate(PdfWriter writer, Document document, Object data) {
-        int total = writer.getPageNumber() - 2;
+        int total = writer.getPageNumber() - 1;
         return total + "";
     }
 

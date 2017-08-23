@@ -35,19 +35,19 @@
 <!--第一页结束-->
 <!---分页标记-->
 <span style="page-break-after:always;"></span>
-<!--第二页开始-->
-<div class="page">
-    <div>第二页开始了</div>
-    <div>列表值:</div>
-    <div>
-    <#list scores as item>
-        <div><p>${item}</p></div>
-    </#list>
-    </div>
+<#--<!--第二页开始&ndash;&gt;-->
+<#--<div class="page">-->
+    <#--<div>第二页开始了</div>-->
+    <#--<div>列表值:</div>-->
+    <#--<div>-->
+    <#--<#list scores as item>-->
+        <#--<div><p>${item}</p></div>-->
+    <#--</#list>-->
+    <#--</div>-->
 
-</div>
+<#--</div>-->
 
 
-<!--第二页结束-->
+<#--<!--第二页结束&ndash;&gt;-->
 </body>
 </html>
