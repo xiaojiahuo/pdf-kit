@@ -94,14 +94,14 @@ public class ReportKit360 {
         AuthorizationTemplate authorizationTemplate = new AuthorizationTemplate();
         authorizationTemplate.setTitle("个人信息查询使用授权文件_510502197106131116");
         authorizationTemplate.setService(new HashMap<String, String>(){{
-            put("身份认证（三元认证）", "姓名：胡友兵\n" +
+            put("身份认证（三元认证）", ("姓名：胡友兵\n" +
                     "身份证号：510502197106131116\n" +
                     "银行卡号：6222022304004716530\n" +
-                    "认证时间：2017/6/28 17:20:16");
+                    "认证时间：2017/6/28 17:20:16").replaceAll("\n", "<br/>"));
         }});
         authorizationTemplate.setAuthorizationDate("授权时间：2017/6/28 17:20:16");
         authorizationTemplate.setAuthorizationContentTile("个人信息查询使用授权书");
-        authorizationTemplate.setAuthorizationContent("本人不可撤销地同意并授权四川锦程消费金融有限责任公司（以下简称“公\n" +
+        authorizationTemplate.setAuthorizationContent(("本人不可撤销地同意并授权四川锦程消费金融有限责任公司（以下简称“公\n" +
                 "司”）向“中国人民银行金融信用信息基础数据库”查询并获取本人个人信用报\n" +
                 "告，向芝麻信用等合法征信机构以及其他任何可能的来源查询并获取本人个人\n" +
                 "相关信息。查询事由包括审核本人贷款申请、审核本人作为担保人、进行贷后\n" +
@@ -128,7 +128,7 @@ public class ReportKit360 {
                 "授权人（签名）：____________________\n" +
                 "证件号码：____________________________\n" +
                 "证件类型：□身份证 □临时身份证 □其他____________________\n" +
-                "授权日期： 年 月 日");
+                "授权日期： 年 月 日").replaceAll("\n", "<br/>"));
 
         String path= kit.createPDF(authorizationTemplate,"authorization_template.pdf");
 //        System.out.println(path);

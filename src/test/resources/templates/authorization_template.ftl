@@ -10,7 +10,14 @@
         }
         .center{
             text-align: center;
+            font-size: 25px;
             width: 100%;
+        }
+
+        .firstTitle{
+            font-size: 20px;
+            padding-bottom: 6px;
+            padding-top: 6px;
         }
     </style>
 </head>
@@ -20,16 +27,19 @@
     <div class="center"><p>${title}</p></div>
     <#list service?keys as key>
         <div>
-            <div style="font-size: 20px"><p>${key}:</p></div>
+            <div class="firstTitle">${key}:</div>
             <div>${service[key]}</div>
         </div>
     </#list>
 
-    <div style="font-size: 20px"><p>授权确认:${authorizationDate}</p></div>
+    <div >
+        <div class="firstTitle">授权确认:</div>
+        <div>${authorizationDate}</div>
+    </div>
     <div>
-        <div style="font-size: 20px">授权内容:</div>
+        <div class="firstTitle">授权内容:</div>
         <p style="text-align: center;font-size: 20px">${authorizationContentTile}</p>
-        <p>${authorizationContent}</p>
+        <div>${authorizationContent}</div>
     </div>
 
 </div>
